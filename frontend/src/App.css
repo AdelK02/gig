@@ -1,0 +1,9 @@
+/* html {
+  scroll-behavior: smooth;
+} */
+
+/* Ensure the post job modal content is not faded by the bootstrap backdrop */
+.modal-backdrop.show {
+  opacity: 1 !important;
+  background-color: rgba(0, 0, 0, 0.45) !important;
+}
