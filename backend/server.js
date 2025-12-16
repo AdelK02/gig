@@ -9,11 +9,18 @@ connectDB();
 
 const app = express();
 
-// CORS configuration - allow all localhost ports for development
 app.use(cors({
-  origin: /^http:\/\/localhost:\d+$/, // Allow any localhost port
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://gig-delta.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
+app.options("*", cors());
 
 app.use(express.json());
 
